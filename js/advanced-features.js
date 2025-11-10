@@ -375,7 +375,7 @@ function handleQuickAction(action) {
             window.location.href = 'reservation.html';
             break;
         case 'directions':
-            window.open('https://www.google.com/maps/dir//No.+92%2F6,+MARALAVADI+HOBLI,+KANAKAPURA+MAIN,+ROAD,+HAROHALLI+TALUK,+JAKKASANDRA,+VILLAGE,+Harohalli,+Ramanagara,+Karnataka+562112/@12.6529214,77.3586284,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bae5b74e9ca973d:0x713c5aaf7608c916!2m2!1d77.4410303!2d12.6529341?entry=ttu&g_ep=EgoyMDI1MTEwNC4xIKXMDSoASAFQAw%3D%3D', '_blank');
+            window.open('https://maps.app.goo.gl/U3xdcv7So7ZEVTgu5', '_blank');
             break;
     }
 }
@@ -568,7 +568,7 @@ function initGeolocation() {
             (error) => {
                 console.error('Geolocation error:', error);
                 // Fallback to general directions
-                window.open('https://www.google.com/maps/dir//No.+92%2F6,+MARALAVADI+HOBLI,+KANAKAPURA+MAIN,+ROAD,+HAROHALLI+TALUK,+JAKKASANDRA,+VILLAGE,+Harohalli,+Ramanagara,+Karnataka+562112/@12.6529214,77.3586284,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bae5b74e9ca973d:0x713c5aaf7608c916!2m2!1d77.4410303!2d12.6529341?entry=ttu&g_ep=EgoyMDI1MTEwNC4xIKXMDSoASAFQAw%3D%3D', '_blank');
+                window.open('https://maps.app.goo.gl/U3xdcv7So7ZEVTgu5', '_blank');
             }
         );
     });
