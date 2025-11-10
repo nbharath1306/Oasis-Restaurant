@@ -79,7 +79,7 @@ class EmailService {
                 special_requests: reservationData.specialRequests || 'None',
                 restaurant_name: 'Oasis Restaurant',
                 restaurant_phone: '72046 11326',
-                restaurant_address: 'No. 92/6, Maralavadi Hobli, Kanakapura Main Road, Harohalli',
+                restaurant_address: 'No. 92/6, Maralavadi Hobli, Kanakapura Main Road, Harohalli Taluk, Jakkasandra Village, Harohalli, Ramanagara, Karnataka 562112',
                 confirmation_date: new Date().toLocaleDateString(),
                 confirmation_time: new Date().toLocaleTimeString()
             };
