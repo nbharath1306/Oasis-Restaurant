@@ -2,7 +2,7 @@
 
 class EmailService {
     constructor() {
-        this.serviceId = 'service_rdwhfmn';
+        this.serviceId = 'service_2zh5f95';
         this.userId = null; // Will be set when you provide your public key
         this.templateIds = {
             contact: 'template_contact', // You'll need to create this template
