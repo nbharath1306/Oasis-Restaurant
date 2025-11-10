@@ -1,0 +1,17 @@
+<!-- Placeholder SVG for Logo -->
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="logoGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B4513;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  <circle cx="100" cy="100" r="90" fill="url(#logoGrad)" stroke="#2C1810" stroke-width="4"/>
+  <text x="100" y="85" font-family="serif" font-size="28" fill="white" text-anchor="middle" font-weight="bold">
+    OASIS
+  </text>
+  <text x="100" y="115" font-family="sans-serif" font-size="16" fill="white" text-anchor="middle">
+    RESTAURANT
+  </text>
+  <path d="M50 130 Q100 120 150 130" stroke="white" stroke-width="2" fill="none"/>
+</svg>

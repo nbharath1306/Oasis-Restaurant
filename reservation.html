@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Table - Oasis Restaurant Bangalore</title>
+    <meta name="description" content="Reserve your table at Oasis Restaurant Bangalore. Choose your preferred date, time, and table. Instant confirmation available.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#e1aa64">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Oasis Restaurant">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/advanced-animations.css">
+    <link rel="stylesheet" href="css/reservation.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-logo">
+            <i class="fas fa-utensils" style="font-size: 2rem; color: var(--primary-color);"></i>
+        </div>
+        <div class="loading-text">Preparing Your Experience</div>
+        <div class="loading-progress">
+            <div class="loading-bar"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="assets/Images/Entrance.jpg" alt="Oasis Restaurant Logo" class="nav-logo">
+                <span class="nav-title">Oasis Restaurant</span>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="menu.html" class="nav-link">Menu</a>
+                <a href="reservation.html" class="nav-link active">Reserve</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+                <a href="tel:+917204611326" class="nav-cta">
+                    <i class="fas fa-phone"></i> Call Now
+                </a>
+            </div>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Reservation Hero -->
+    <section class="reservation-hero parallax-section">
+        <div class="parallax-bg" style="background-image: url('assets/Images/Family.jpg')"></div>
+        <div class="hero-overlay"></div>
+        <div class="particles-container" id="particles"></div>
+        <div class="container">
+            <div class="reservation-hero-content">
+                <h1 class="text-reveal">
+                    <span>Reserve</span> <span>Your</span> <span>Perfect</span> <span>Table</span>
+                </h1>
+                <p class="scroll-reveal">Experience dining at its finest with guaranteed seating and personalized service</p>
+                <div class="hero-features scroll-reveal-left">
+                    <div class="feature-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Instant Confirmation</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Flexible Booking</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-utensils"></i>
+                        <span>Premium Service</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Form -->
+    <section class="reservation-form-section">
+        <div class="container">
+            <div class="reservation-wrapper">
+                <div class="reservation-form-container">
+                    <div class="form-header scroll-reveal">
+                        <h2>Book Your Table</h2>
+                        <p>Select your preferred date, time, and party size</p>
+                    </div>
+                    
+                    <form class="reservation-form" id="reservationForm">
+                        <div class="form-step active" data-step="1">
+                            <h3>When would you like to dine?</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="reservationDate">Select Date</label>
+                                    <input type="date" id="reservationDate" name="date" required>
+                                    <div class="form-icon"><i class="fas fa-calendar"></i></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="reservationTime">Select Time</label>
+                                    <select id="reservationTime" name="time" required>
+                                        <option value="">Choose time</option>
+                                        <option value="12:00">12:00 PM</option>
+                                        <option value="12:30">12:30 PM</option>
+                                        <option value="13:00">1:00 PM</option>
+                                        <option value="13:30">1:30 PM</option>
+                                        <option value="14:00">2:00 PM</option>
+                                        <option value="19:00">7:00 PM</option>
+                                        <option value="19:30">7:30 PM</option>
+                                        <option value="20:00">8:00 PM</option>
+                                        <option value="20:30">8:30 PM</option>
+                                        <option value="21:00">9:00 PM</option>
+                                        <option value="21:30">9:30 PM</option>
+                                    </select>
+                                    <div class="form-icon"><i class="fas fa-clock"></i></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="partySize">Number of Guests</label>
+                                <div class="party-size-selector">
+                                    <button type="button" class="party-btn" onclick="changePartySize(-1)">-</button>
+                                    <input type="number" id="partySize" name="partySize" value="2" min="1" max="12" readonly>
+                                    <button type="button" class="party-btn" onclick="changePartySize(1)">+</button>
+                                </div>
+                            </div>
+                            <div class="step-navigation">
+                                <button type="button" class="btn btn-primary liquid-button" onclick="nextStep()">
+                                    Choose Table <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-step" data-step="2">
+                            <h3>Select Your Preferred Table</h3>
+                            <div class="table-selector">
+                                <div class="restaurant-layout">
+                                    <div class="table-area">
+                                        <div class="table-item" data-table="1" data-seats="2">
+                                            <div class="table-visual table-2"></div>
+                                            <span>Table 1 (2 seats)</span>
+                                        </div>
+                                        <div class="table-item" data-table="2" data-seats="4">
+                                            <div class="table-visual table-4"></div>
+                                            <span>Table 2 (4 seats)</span>
+                                        </div>
+                                        <div class="table-item" data-table="3" data-seats="4">
+                                            <div class="table-visual table-4"></div>
+                                            <span>Table 3 (4 seats)</span>
+                                        </div>
+                                        <div class="table-item" data-table="4" data-seats="6">
+                                            <div class="table-visual table-6"></div>
+                                            <span>Table 4 (6 seats)</span>
+                                        </div>
+                                        <div class="table-item" data-table="5" data-seats="8">
+                                            <div class="table-visual table-8"></div>
+                                            <span>Table 5 (8 seats)</span>
+                                        </div>
+                                        <div class="table-item vip" data-table="6" data-seats="10">
+                                            <div class="table-visual table-vip"></div>
+                                            <span>VIP Table (10 seats)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step-navigation">
+                                <button type="button" class="btn btn-secondary" onclick="prevStep()">
+                                    <i class="fas fa-arrow-left"></i> Back
+                                </button>
+                                <button type="button" class="btn btn-primary liquid-button" onclick="nextStep()">
+                                    Personal Details <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-step" data-step="3">
+                            <h3>Your Information</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                    <div class="form-icon"><i class="fas fa-user"></i></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                    <div class="form-icon"><i class="fas fa-user"></i></div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" required>
+                                    <div class="form-icon"><i class="fas fa-envelope"></i></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                    <div class="form-icon"><i class="fas fa-phone"></i></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="specialRequests">Special Requests (Optional)</label>
+                                <textarea id="specialRequests" name="specialRequests" rows="3" placeholder="Birthday celebration, dietary requirements, etc."></textarea>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="newsletter" id="newsletter">
+                                    <span class="checkmark"></span>
+                                    Send me updates about special offers and events
+                                </label>
+                            </div>
+                            <div class="step-navigation">
+                                <button type="button" class="btn btn-secondary" onclick="prevStep()">
+                                    <i class="fas fa-arrow-left"></i> Back
+                                </button>
+                                <button type="submit" class="btn btn-primary liquid-button">
+                                    Confirm Reservation <i class="fas fa-check"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="reservation-summary">
+                    <div class="summary-card">
+                        <h3>Reservation Summary</h3>
+                        <div class="summary-item">
+                            <i class="fas fa-calendar"></i>
+                            <div>
+                                <label>Date</label>
+                                <span id="summaryDate">Select date</span>
+                            </div>
+                        </div>
+                        <div class="summary-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <label>Time</label>
+                                <span id="summaryTime">Select time</span>
+                            </div>
+                        </div>
+                        <div class="summary-item">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <label>Guests</label>
+                                <span id="summaryGuests">2 people</span>
+                            </div>
+                        </div>
+                        <div class="summary-item">
+                            <i class="fas fa-chair"></i>
+                            <div>
+                                <label>Table</label>
+                                <span id="summaryTable">Not selected</span>
+                            </div>
+                        </div>
+                        <div class="summary-divider"></div>
+                        <div class="summary-features">
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Free WiFi</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Complimentary Water</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Birthday Special</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <h4>Need Help?</h4>
+                        <p>Call us directly for special arrangements</p>
+                        <a href="tel:+917204611326" class="contact-btn">
+                            <i class="fas fa-phone"></i> 72046 11326
+                        </a>
+                        <a href="https://wa.me/917204611326" class="contact-btn whatsapp" target="_blank">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Confirmation Modal -->
+    <div class="confirmation-modal" id="confirmationModal">
+        <div class="modal-content">
+            <div class="confirmation-header">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Reservation Confirmed!</h2>
+                <p>We've sent confirmation details to your email</p>
+            </div>
+            <div class="confirmation-details">
+                <div class="detail-item">
+                    <strong>Booking ID:</strong>
+                    <span id="bookingId">OR2025-001</span>
+                </div>
+                <div class="detail-item">
+                    <strong>Date & Time:</strong>
+                    <span id="confirmedDateTime">-</span>
+                </div>
+                <div class="detail-item">
+                    <strong>Table:</strong>
+                    <span id="confirmedTable">-</span>
+                </div>
+                <div class="detail-item">
+                    <strong>Guests:</strong>
+                    <span id="confirmedGuests">-</span>
+                </div>
+            </div>
+            <div class="confirmation-actions">
+                <button class="btn btn-primary" onclick="closeConfirmation()">
+                    <i class="fas fa-calendar-plus"></i> Add to Calendar
+                </button>
+                <button class="btn btn-secondary" onclick="closeConfirmation()">
+                    <i class="fas fa-home"></i> Back to Home
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="assets/Images/Entrance.jpg" alt="Oasis Restaurant Logo" class="footer-logo">
+                        <h3>Oasis Restaurant</h3>
+                    </div>
+                    <p>Experience authentic multi-cuisine dining in the heart of Harohalli.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="reservation.html">Reserve</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> No. 92/6, Maralavadi Hobli, Harohalli, Ramanagara 562112</p>
+                        <p><i class="fas fa-phone"></i> 72046 11326</p>
+                        <p><i class="fas fa-clock"></i> 7:00 AM - 11:00 PM</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Oasis Restaurant Bangalore. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+    <script src="js/advanced-features.js"></script>
+    <script src="js/reservation.js"></script>
+    <script src="js/emailjs-integration.js"></script>
+</body>
+</html>

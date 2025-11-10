@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Oasis Restaurant Bangalore | Multi-Cuisine Restaurant in Harohalli</title>
+    <meta name="description" content="Explore our extensive menu featuring South Indian, North Indian, Chinese, Arabian, Mandhi, Seafood & Kerala cuisine at Oasis Restaurant, Harohalli.">
+    <meta name="keywords" content="Oasis Restaurant menu, South Indian food menu, North Indian dishes, Chinese food, Arabian cuisine, Mandhi menu, Seafood restaurant, Kerala food menu, restaurant prices Harohalli">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#e1aa64">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Oasis Restaurant">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="assets/Images/Entrance.jpg" alt="Oasis Restaurant Logo" class="nav-logo">
+                <span class="nav-title">Oasis Restaurant</span>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="menu.html" class="nav-link active">Menu</a>
+                <a href="index.html#gallery" class="nav-link">Gallery</a>
+                <a href="index.html#reviews" class="nav-link">Reviews</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+                <a href="tel:+917204611326" class="nav-cta">
+                    <i class="fas fa-phone"></i> Call Now
+                </a>
+            </div>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Hero -->
+    <section class="menu-hero">
+        <div class="menu-hero-bg"></div>
+        <div class="menu-hero-overlay"></div>
+        <div class="container">
+            <div class="menu-hero-content">
+                <h1>Our Menu</h1>
+                <p>Authentic flavors from 6 different cuisines, crafted with love and tradition</p>
+                <div class="menu-hero-info">
+                    <div class="menu-info-item">
+                        <i class="fas fa-utensils"></i>
+                        <span>7 Categories</span>
+                    </div>
+                    <div class="menu-info-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Fresh Daily</span>
+                    </div>
+                    <div class="menu-info-item">
+                        <i class="fas fa-leaf"></i>
+                        <span>Fresh Ingredients</span>
+                    </div>
+                    <div class="menu-info-item">
+                        <i class="fas fa-rupee-sign"></i>
+                        <span>₹450 Avg for 2</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Navigation -->
+    <section class="menu-nav-section">
+        <div class="container">
+            <div class="menu-nav">
+                <button class="menu-nav-btn active" data-category="all">
+                    <i class="fas fa-th-large"></i>
+                    All Items
+                </button>
+                <button class="menu-nav-btn" data-category="south-indian">
+                    <i class="fas fa-leaf"></i>
+                    South Indian
+                </button>
+                <button class="menu-nav-btn" data-category="north-indian">
+                    <i class="fas fa-fire"></i>
+                    North Indian
+                </button>
+                <button class="menu-nav-btn" data-category="chinese">
+                    <i class="fas fa-dragon"></i>
+                    Chinese
+                </button>
+                <button class="menu-nav-btn" data-category="arabian">
+                    <i class="fas fa-mosque"></i>
+                    Arabian & Mandhi
+                </button>
+                <button class="menu-nav-btn" data-category="seafood">
+                    <i class="fas fa-fish"></i>
+                    Seafood
+                </button>
+                <button class="menu-nav-btn" data-category="kerala">
+                    <i class="fas fa-coconut"></i>
+                    Kerala
+                </button>
+            </div>
+            
+            <div class="menu-actions">
+                <a href="assets/menu.pdf" class="btn btn-secondary" target="_blank">
+                    <i class="fas fa-download"></i> Download PDF
+                </a>
+                <button class="btn btn-primary" onclick="openOrderModal()">
+                    <i class="fas fa-shopping-cart"></i> Order Now
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Content -->
+    <section class="menu-content">
+        <div class="container">
+            <!-- South Indian Menu -->
+            <div class="menu-category" data-category="south-indian">
+                <h2 class="category-title">
+                    <i class="fas fa-leaf"></i>
+                    South Indian Specialties
+                </h2>
+                <p class="category-description">Traditional South Indian favorites made with authentic recipes and fresh ingredients</p>
+                
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/Images/A dish.jpg" alt="Masala Dosa" loading="lazy">
+                            <div class="menu-item-badge">Popular</div>
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Masala Dosa</h3>
+                            <p>Crispy rice and lentil crepe filled with spiced potato curry, served with coconut chutney and sambar</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹85</span>
+                                <div class="menu-item-meta">
+                                    <span class="vegetarian"><i class="fas fa-circle"></i> Veg</span>
+                                    <span class="spice-level">🌶️ Mild</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/menu/idli.jpg" alt="Idli Sambar" loading="lazy">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Idli Sambar (4 pcs)</h3>
+                            <p>Soft steamed rice cakes served with lentil sambar and coconut chutney</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹65</span>
+                                <div class="menu-item-meta">
+                                    <span class="vegetarian"><i class="fas fa-circle"></i> Veg</span>
+                                    <span class="spice-level">🌶️ Mild</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/menu/vada.jpg" alt="Medu Vada" loading="lazy">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Medu Vada (3 pcs)</h3>
+                            <p>Crispy fried lentil donuts served with sambar and coconut chutney</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹70</span>
+                                <div class="menu-item-meta">
+                                    <span class="vegetarian"><i class="fas fa-circle"></i> Veg</span>
+                                    <span class="spice-level">🌶️ Medium</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/menu/uttapam.jpg" alt="Onion Uttapam" loading="lazy">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Onion Uttapam</h3>
+                            <p>Thick rice pancake topped with onions and served with chutney and sambar</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹90</span>
+                                <div class="menu-item-meta">
+                                    <span class="vegetarian"><i class="fas fa-circle"></i> Veg</span>
+                                    <span class="spice-level">🌶️ Mild</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/menu/south-indian-meals.jpg" alt="South Indian Meals" loading="lazy">
+                            <div class="menu-item-badge">Chef's Special</div>
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>South Indian Meals</h3>
+                            <p>Complete traditional meals with rice, sambar, rasam, vegetables, curd, and pickle</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹150</span>
+                                <div class="menu-item-meta">
+                                    <span class="vegetarian"><i class="fas fa-circle"></i> Veg</span>
+                                    <span class="spice-level">🌶️ Medium</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/menu/pongal.jpg" alt="Ven Pongal" loading="lazy">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Ven Pongal</h3>
+                            <p>Savory rice and lentil dish cooked with ghee, pepper, and cumin, served with sambar and chutney</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹80</span>
+                                <div class="menu-item-meta">
+                                    <span class="vegetarian"><i class="fas fa-circle"></i> Veg</span>
+                                    <span class="spice-level">🌶️ Mild</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- North Indian Menu -->
+            <div class="menu-category" data-category="north-indian">
+                <h2 class="category-title">
+                    <i class="fas fa-fire"></i>
+                    North Indian Delicacies
+                </h2>
+                <p class="category-description">Rich and flavorful North Indian dishes with authentic spices and traditional cooking methods</p>
+                
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/menu/butter-chicken.jpg" alt="Butter Chicken" loading="lazy">
+                            <div class="menu-item-badge">Popular</div>
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Butter Chicken</h3>
+                            <p>Tender chicken pieces in creamy tomato-based curry with aromatic spices</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹280</span>
+                                <div class="menu-item-meta">
+                                    <span class="non-vegetarian"><i class="fas fa-circle"></i> Non-Veg</span>
+                                    <span class="spice-level">🌶️ Medium</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/menu/paneer-makhani.jpg" alt="Paneer Makhani" loading="lazy">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Paneer Makhani</h3>
+                            <p>Cottage cheese cubes in rich, creamy tomato gravy with butter and cream</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹220</span>
+                                <div class="menu-item-meta">
+                                    <span class="vegetarian"><i class="fas fa-circle"></i> Veg</span>
+                                    <span class="spice-level">🌶️ Medium</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/Images/Biryani.jpg" alt="Chicken Biryani" loading="lazy">
+                            <div class="menu-item-badge">Chef's Special</div>
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Chicken Biryani</h3>
+                            <p>Fragrant basmati rice cooked with tender chicken pieces, saffron, and aromatic spices</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹320</span>
+                                <div class="menu-item-meta">
+                                    <span class="non-vegetarian"><i class="fas fa-circle"></i> Non-Veg</span>
+                                    <span class="spice-level">🌶️ Medium</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/Images/Naan.jpg" alt="Garlic Naan" loading="lazy">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Garlic Naan</h3>
+                            <p>Soft, fluffy bread topped with garlic and herbs, baked in tandoor</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹65</span>
+                                <div class="menu-item-meta">
+                                    <span class="vegetarian"><i class="fas fa-circle"></i> Veg</span>
+                                    <span class="spice-level">🌶️ Mild</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/menu/dal-makhani.jpg" alt="Dal Makhani" loading="lazy">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Dal Makhani</h3>
+                            <p>Slow-cooked black lentils in rich, creamy gravy with butter and cream</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹180</span>
+                                <div class="menu-item-meta">
+                                    <span class="vegetarian"><i class="fas fa-circle"></i> Veg</span>
+                                    <span class="spice-level">🌶️ Mild</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/Images/Tandoori.jpg" alt="Tandoori Chicken" loading="lazy">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Tandoori Chicken (Half)</h3>
+                            <p>Marinated chicken cooked in tandoor with yogurt and spices</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹250</span>
+                                <div class="menu-item-meta">
+                                    <span class="non-vegetarian"><i class="fas fa-circle"></i> Non-Veg</span>
+                                    <span class="spice-level">🌶️ Hot</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chinese Menu -->
+            <div class="menu-category" data-category="chinese">
+                <h2 class="category-title">
+                    <i class="fas fa-dragon"></i>
+                    Chinese Favorites
+                </h2>
+                <p class="category-description">Indo-Chinese fusion dishes with bold flavors and fresh ingredients</p>
+                
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/menu/chicken-manchurian.jpg" alt="Chicken Manchurian" loading="lazy">
+                            <div class="menu-item-badge">Popular</div>
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Chicken Manchurian</h3>
+                            <p>Crispy chicken balls in tangy, spicy Manchurian sauce</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹240</span>
+                                <div class="menu-item-meta">
+                                    <span class="non-vegetarian"><i class="fas fa-circle"></i> Non-Veg</span>
+                                    <span class="spice-level">🌶️ Medium</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/Images/Fried Rice.jpg" alt="Veg Fried Rice" loading="lazy">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Veg Fried Rice</h3>
+                            <p>Wok-tossed rice with fresh vegetables and soy sauce</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹150</span>
+                                <div class="menu-item-meta">
+                                    <span class="vegetarian"><i class="fas fa-circle"></i> Veg</span>
+                                    <span class="spice-level">🌶️ Mild</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/menu/hakka-noodles.jpg" alt="Chicken Hakka Noodles" loading="lazy">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Chicken Hakka Noodles</h3>
+                            <p>Stir-fried noodles with chicken and vegetables in Chinese sauces</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹180</span>
+                                <div class="menu-item-meta">
+                                    <span class="non-vegetarian"><i class="fas fa-circle"></i> Non-Veg</span>
+                                    <span class="spice-level">🌶️ Medium</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/Images/Corn.jpg" alt="Gobi Manchurian" loading="lazy">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Gobi Manchurian</h3>
+                            <p>Crispy cauliflower florets in spicy Manchurian sauce</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹160</span>
+                                <div class="menu-item-meta">
+                                    <span class="vegetarian"><i class="fas fa-circle"></i> Veg</span>
+                                    <span class="spice-level">🌶️ Medium</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/menu/sweet-sour-chicken.jpg" alt="Sweet & Sour Chicken" loading="lazy">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Sweet & Sour Chicken</h3>
+                            <p>Battered chicken pieces in tangy sweet and sour sauce with bell peppers</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹220</span>
+                                <div class="menu-item-meta">
+                                    <span class="non-vegetarian"><i class="fas fa-circle"></i> Non-Veg</span>
+                                    <span class="spice-level">🌶️ Mild</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/menu/chilli-chicken.jpg" alt="Chilli Chicken" loading="lazy">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Chilli Chicken</h3>
+                            <p>Spicy chicken pieces stir-fried with onions, capsicum, and green chillies</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹260</span>
+                                <div class="menu-item-meta">
+                                    <span class="non-vegetarian"><i class="fas fa-circle"></i> Non-Veg</span>
+                                    <span class="spice-level">🌶️ Hot</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Arabian & Mandhi Menu -->
+            <div class="menu-category" data-category="arabian">
+                <h2 class="category-title">
+                    <i class="fas fa-mosque"></i>
+                    Arabian & Mandhi Specialties
+                </h2>
+                <p class="category-description">Authentic Arabian dishes and flavorful Mandhi preparations with traditional spices</p>
+                
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/menu/chicken-mandhi.jpg" alt="Chicken Mandhi" loading="lazy">
+                            <div class="menu-item-badge">Signature</div>
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Chicken Mandhi</h3>
+                            <p>Traditional Arabian rice dish with tender spiced chicken, cooked in aromatic herbs</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹350</span>
+                                <div class="menu-item-meta">
+                                    <span class="non-vegetarian"><i class="fas fa-circle"></i> Non-Veg</span>
+                                    <span class="spice-level">🌶️ Medium</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/menu/mutton-mandhi.jpg" alt="Mutton Mandhi" loading="lazy">
+                            <div class="menu-item-badge">Chef's Special</div>
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Mutton Mandhi</h3>
+                            <p>Slow-cooked mutton with fragrant basmati rice and traditional Arabian spices</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹420</span>
+                                <div class="menu-item-meta">
+                                    <span class="non-vegetarian"><i class="fas fa-circle"></i> Non-Veg</span>
+                                    <span class="spice-level">🌶️ Medium</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/menu/arabian-rice.jpg" alt="Arabian Rice" loading="lazy">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Arabian Rice</h3>
+                            <p>Fragrant basmati rice cooked with aromatic spices and herbs</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹120</span>
+                                <div class="menu-item-meta">
+                                    <span class="vegetarian"><i class="fas fa-circle"></i> Veg</span>
+                                    <span class="spice-level">🌶️ Mild</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/menu/arabian-chicken.jpg" alt="Arabian Chicken" loading="lazy">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Arabian Chicken Roast</h3>
+                            <p>Grilled chicken marinated in traditional Arabian spices</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹280</span>
+                                <div class="menu-item-meta">
+                                    <span class="non-vegetarian"><i class="fas fa-circle"></i> Non-Veg</span>
+                                    <span class="spice-level">🌶️ Medium</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/menu/kabsa.jpg" alt="Kabsa Rice" loading="lazy">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Chicken Kabsa</h3>
+                            <p>Spiced rice dish with chicken, cooked with tomatoes and aromatic spices</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹320</span>
+                                <div class="menu-item-meta">
+                                    <span class="non-vegetarian"><i class="fas fa-circle"></i> Non-Veg</span>
+                                    <span class="spice-level">🌶️ Medium</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/menu/hummus.jpg" alt="Hummus" loading="lazy">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Hummus with Pita</h3>
+                            <p>Creamy chickpea dip served with warm pita bread</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹140</span>
+                                <div class="menu-item-meta">
+                                    <span class="vegetarian"><i class="fas fa-circle"></i> Veg</span>
+                                    <span class="spice-level">🌶️ Mild</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seafood Menu -->
+            <div class="menu-category" data-category="seafood">
+                <h2 class="category-title">
+                    <i class="fas fa-fish"></i>
+                    Fresh Seafood
+                </h2>
+                <p class="category-description">Fresh catch prepared with authentic coastal flavors and traditional cooking methods</p>
+                
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/menu/fish-curry.jpg" alt="Fish Curry" loading="lazy">
+                            <div class="menu-item-badge">Popular</div>
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Fish Curry</h3>
+                            <p>Fresh fish cooked in spicy coconut-based curry with traditional spices</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹280</span>
+                                <div class="menu-item-meta">
+                                    <span class="non-vegetarian"><i class="fas fa-circle"></i> Non-Veg</span>
+                                    <span class="spice-level">🌶️ Hot</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/menu/prawn-curry.jpg" alt="Prawn Curry" loading="lazy">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Prawn Curry</h3>
+                            <p>Succulent prawns in rich, spicy coconut gravy</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹320</span>
+                                <div class="menu-item-meta">
+                                    <span class="non-vegetarian"><i class="fas fa-circle"></i> Non-Veg</span>
+                                    <span class="spice-level">🌶️ Hot</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/menu/fish-fry.jpg" alt="Fish Fry" loading="lazy">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Fish Fry</h3>
+                            <p>Crispy fried fish marinated in spices and herbs</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹250</span>
+                                <div class="menu-item-meta">
+                                    <span class="non-vegetarian"><i class="fas fa-circle"></i> Non-Veg</span>
+                                    <span class="spice-level">🌶️ Medium</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/menu/prawn-fry.jpg" alt="Prawn Fry" loading="lazy">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Prawn Fry</h3>
+                            <p>Spicy fried prawns with onions and curry leaves</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹300</span>
+                                <div class="menu-item-meta">
+                                    <span class="non-vegetarian"><i class="fas fa-circle"></i> Non-Veg</span>
+                                    <span class="spice-level">🌶️ Hot</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/menu/fish-biryani.jpg" alt="Fish Biryani" loading="lazy">
+                            <div class="menu-item-badge">Chef's Special</div>
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Fish Biryani</h3>
+                            <p>Aromatic basmati rice cooked with marinated fish and biryani spices</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹350</span>
+                                <div class="menu-item-meta">
+                                    <span class="non-vegetarian"><i class="fas fa-circle"></i> Non-Veg</span>
+                                    <span class="spice-level">🌶️ Medium</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/menu/crab-curry.jpg" alt="Crab Curry" loading="lazy">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Crab Curry</h3>
+                            <p>Fresh crab cooked in spicy coconut curry with coastal spices</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹380</span>
+                                <div class="menu-item-meta">
+                                    <span class="non-vegetarian"><i class="fas fa-circle"></i> Non-Veg</span>
+                                    <span class="spice-level">🌶️ Hot</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kerala Menu -->
+            <div class="menu-category" data-category="kerala">
+                <h2 class="category-title">
+                    <i class="fas fa-coconut"></i>
+                    Kerala Specialties
+                </h2>
+                <p class="category-description">Authentic Kerala cuisine with coconut, curry leaves, and traditional God's Own Country flavors</p>
+                
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/menu/kerala-meals.jpg" alt="Kerala Meals" loading="lazy">
+                            <div class="menu-item-badge">Traditional</div>
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Kerala Meals</h3>
+                            <p>Traditional Kerala sadhya with rice, sambar, avial, thoran, and payasam</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹200</span>
+                                <div class="menu-item-meta">
+                                    <span class="vegetarian"><i class="fas fa-circle"></i> Veg</span>
+                                    <span class="spice-level">🌶️ Medium</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/menu/appam.jpg" alt="Appam with Stew" loading="lazy">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Appam with Chicken Stew</h3>
+                            <p>Soft, fluffy rice pancakes served with creamy chicken stew</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹180</span>
+                                <div class="menu-item-meta">
+                                    <span class="non-vegetarian"><i class="fas fa-circle"></i> Non-Veg</span>
+                                    <span class="spice-level">🌶️ Mild</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/menu/puttu.jpg" alt="Puttu Kadala" loading="lazy">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Puttu & Kadala Curry</h3>
+                            <p>Steamed rice cylinders served with spicy black chickpea curry</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹120</span>
+                                <div class="menu-item-meta">
+                                    <span class="vegetarian"><i class="fas fa-circle"></i> Veg</span>
+                                    <span class="spice-level">🌶️ Medium</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/menu/karimeen.jpg" alt="Karimeen Fry" loading="lazy">
+                            <div class="menu-item-badge">Popular</div>
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Karimeen Fry</h3>
+                            <p>Pearl spot fish marinated in Kerala spices and pan-fried to perfection</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹350</span>
+                                <div class="menu-item-meta">
+                                    <span class="non-vegetarian"><i class="fas fa-circle"></i> Non-Veg</span>
+                                    <span class="spice-level">🌶️ Hot</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/menu/beef-curry.jpg" alt="Beef Curry" loading="lazy">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Kerala Beef Curry</h3>
+                            <p>Tender beef pieces cooked in aromatic coconut curry with spices</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹300</span>
+                                <div class="menu-item-meta">
+                                    <span class="non-vegetarian"><i class="fas fa-circle"></i> Non-Veg</span>
+                                    <span class="spice-level">🌶️ Hot</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/menu/payasam.jpg" alt="Payasam" loading="lazy">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Pal Payasam</h3>
+                            <p>Traditional Kerala dessert made with rice, milk, and jaggery</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹80</span>
+                                <div class="menu-item-meta">
+                                    <span class="vegetarian"><i class="fas fa-circle"></i> Veg</span>
+                                    <span class="spice-level">Sweet</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Snacks & Appetizers -->
+            <div class="menu-category" data-category="snacks">
+                <h2 class="category-title">
+                    <i class="fas fa-cookie-bite"></i>
+                    Snacks & Appetizers
+                </h2>
+                <p class="category-description">Perfect starters and light bites to complement your meal</p>
+                
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/Images/French Fries.jpg" alt="French Fries" loading="lazy">
+                            <div class="menu-item-badge">Popular</div>
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Crispy French Fries</h3>
+                            <p>Golden, crispy potato fries seasoned with herbs and spices</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹120</span>
+                                <div class="menu-item-meta">
+                                    <span class="vegetarian"><i class="fas fa-circle"></i> Veg</span>
+                                    <span class="spice-level">🌶️ Mild</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/Images/Soup.jpg" alt="Hot Soup" loading="lazy">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Chef's Special Soup</h3>
+                            <p>Nutritious and comforting soup made with fresh vegetables and aromatic spices</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹80</span>
+                                <div class="menu-item-meta">
+                                    <span class="vegetarian"><i class="fas fa-circle"></i> Veg</span>
+                                    <span class="spice-level">🌶️ Mild</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Beverages -->
+            <div class="menu-category" data-category="beverages">
+                <h2 class="category-title">
+                    <i class="fas fa-coffee"></i>
+                    Beverages & Desserts
+                </h2>
+                <p class="category-description">Refreshing drinks and traditional desserts to complete your meal</p>
+                
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/menu/filter-coffee.jpg" alt="Filter Coffee" loading="lazy">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Filter Coffee</h3>
+                            <p>Traditional South Indian filter coffee with fresh milk</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹35</span>
+                                <div class="menu-item-meta">
+                                    <span class="vegetarian"><i class="fas fa-circle"></i> Veg</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/menu/masala-chai.jpg" alt="Masala Chai" loading="lazy">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Masala Chai</h3>
+                            <p>Spiced tea with cardamom, ginger, and aromatic herbs</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹25</span>
+                                <div class="menu-item-meta">
+                                    <span class="vegetarian"><i class="fas fa-circle"></i> Veg</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/menu/lassi.jpg" alt="Lassi" loading="lazy">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Sweet Lassi</h3>
+                            <p>Refreshing yogurt-based drink with sugar and cardamom</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹60</span>
+                                <div class="menu-item-meta">
+                                    <span class="vegetarian"><i class="fas fa-circle"></i> Veg</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="assets/menu/gulab-jamun.jpg" alt="Gulab Jamun" loading="lazy">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Gulab Jamun (2 pcs)</h3>
+                            <p>Soft milk dumplings in sweet syrup</p>
+                            <div class="menu-item-footer">
+                                <span class="price">₹70</span>
+                                <div class="menu-item-meta">
+                                    <span class="vegetarian"><i class="fas fa-circle"></i> Veg</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Modal -->
+    <div class="order-modal" id="orderModal">
+        <div class="order-modal-content">
+            <div class="order-modal-header">
+                <h3>Order Online</h3>
+                <button class="close-modal" onclick="closeOrderModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="order-modal-body">
+                <p>Choose your preferred platform to order from Oasis Restaurant:</p>
+                <div class="order-platforms">
+                    <a href="#" class="order-platform" target="_blank">
+                        <img src="assets/swiggy-logo.png" alt="Swiggy">
+                        <span>Order on Swiggy</span>
+                    </a>
+                    <a href="#" class="order-platform" target="_blank">
+                        <img src="assets/zomato-logo.png" alt="Zomato">
+                        <span>Order on Zomato</span>
+                    </a>
+                    <a href="https://wa.me/917204611326?text=Hi%20Oasis%20Restaurant,%20I%20would%20like%20to%20place%20an%20order" class="order-platform whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>Order via WhatsApp</span>
+                    </a>
+                    <a href="tel:+917204611326" class="order-platform phone">
+                        <i class="fas fa-phone"></i>
+                        <span>Call to Order</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="assets/Images/Entrance.jpg" alt="Oasis Restaurant Logo" class="footer-logo">
+                        <h3>Oasis Restaurant</h3>
+                    </div>
+                    <p>Experience authentic multi-cuisine dining in the heart of Harohalli. We bring you the finest flavors from across India and beyond.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/oasis_restaurant_bangalore/" target="_blank" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/917204611326" target="_blank" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.justdial.com/Ramanagara/Oasis-Restaurant-Jakkasandra/9999PXX80-XX80-250226210215-U5C9_BZDET" target="_blank" aria-label="JustDial">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="index.html#gallery">Gallery</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Cuisines</h4>
+                    <ul>
+                        <li>South Indian</li>
+                        <li>North Indian</li>
+                        <li>Chinese</li>
+                        <li>Arabian & Mandhi</li>
+                        <li>Seafood</li>
+                        <li>Kerala Food</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> No. 92/6, Maralavadi Hobli, Harohalli, Ramanagara 562112</p>
+                        <p><i class="fas fa-phone"></i> 72046 11326 | 76196 17003</p>
+                        <p><i class="fas fa-clock"></i> 7:00 AM - 11:00 PM</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Oasis Restaurant Bangalore. All rights reserved.</p>
+                <p>Made with <i class="fas fa-heart"></i> for authentic dining experience</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/917204611326?text=Hi%20Oasis%20Restaurant,%20I%20would%20like%20to%20know%20more%20about%20your%20menu%20and%20make%20a%20reservation." 
+       class="whatsapp-float" 
+       target="_blank" 
+       aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/emailjs-integration.js"></script>
+</body>
+</html>
