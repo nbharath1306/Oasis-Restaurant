@@ -31,6 +31,8 @@
     <link rel="stylesheet" href="css/professional-forms.css">
     <link rel="stylesheet" href="css/professional-gallery.css">
     <link rel="stylesheet" href="css/professional-hero.css">
+    <link rel="stylesheet" href="css/advanced-menu.css">
+    <link rel="stylesheet" href="css/reviews-system.css">
     <link rel="stylesheet" href="css/menu.css">
     
     <!-- Favicon -->
@@ -136,6 +138,71 @@
                 <button class="btn btn-primary" onclick="openOrderModal()">
                     <i class="fas fa-shopping-cart"></i> Order Now
                 </button>
+            </div>
+        </div>
+        
+        <!-- Advanced Menu Search & Filters -->
+        <div class="menu-search-container">
+            <div class="search-bar-wrapper">
+                <input type="text" class="menu-search-input" placeholder="Search for dishes, ingredients, or cuisines..." autocomplete="off">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+            
+            <div class="menu-filters-advanced">
+                <div class="filter-group">
+                    <span class="filter-label">Category</span>
+                    <select class="filter-dropdown" id="categoryFilter">
+                        <option value="all">All Categories</option>
+                        <option value="biryani">Biryani</option>
+                        <option value="north-indian">North Indian</option>
+                        <option value="south-indian">South Indian</option>
+                        <option value="chinese">Chinese</option>
+                        <option value="arabian">Arabian & Mandhi</option>
+                        <option value="seafood">Seafood</option>
+                        <option value="tandoor">Tandoor</option>
+                        <option value="healthy">Healthy Options</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <span class="filter-label">Dietary</span>
+                    <select class="filter-dropdown" id="dietaryFilter">
+                        <option value="all">All</option>
+                        <option value="vegetarian">Vegetarian</option>
+                        <option value="non-veg">Non-Vegetarian</option>
+                        <option value="vegan">Vegan</option>
+                        <option value="gluten-free">Gluten-Free</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <span class="filter-label">Price</span>
+                    <select class="filter-dropdown" id="priceFilter">
+                        <option value="all">All Prices</option>
+                        <option value="budget">Under ₹200</option>
+                        <option value="mid">₹200 - ₹350</option>
+                        <option value="premium">Above ₹350</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <span class="filter-label">Spice Level</span>
+                    <select class="filter-dropdown" id="spiceFilter">
+                        <option value="all">All Levels</option>
+                        <option value="mild">Mild (🌶️-🌶️🌶️)</option>
+                        <option value="medium">Medium (🌶️🌶️🌶️)</option>
+                        <option value="hot">Hot (🌶️🌶️🌶️🌶️+)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="search-count"></div>
+        </div>
+        
+        <!-- Enhanced Menu Items Grid -->
+        <div class="container">
+            <div class="menu-items-grid">
+                <!-- Menu items will be dynamically loaded here -->
             </div>
         </div>
     </section>
@@ -1061,6 +1128,8 @@
 
     <!-- Scripts -->
     <script src="js/professional-ui.js"></script>
+    <script src="js/advanced-menu.js"></script>
+    <script src="js/reviews-system.js"></script>
     <script src="js/script.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/emailjs-integration.js"></script>

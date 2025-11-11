@@ -1,0 +1,304 @@
+/* Multi-language Support System */
+.language-selector {
+    position: fixed;
+    top: 120px;
+    right: 20px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.language-selector:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.language-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.language-toggle i {
+    color: #e67e22;
+    font-size: 1.1rem;
+}
+
+.language-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    padding: 10px 0;
+    min-width: 180px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    border: 1px solid #e9ecef;
+}
+
+.language-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.language-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.language-option:hover {
+    background: #f8f9fa;
+    color: #e67e22;
+}
+
+.language-option.active {
+    background: linear-gradient(135deg, #e67e22, #d35400);
+    color: #fff;
+}
+
+.language-flag {
+    width: 24px;
+    height: 18px;
+    border-radius: 3px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.flag-en {
+    background: linear-gradient(to bottom, #012169 33%, #fff 33%, #fff 66%, #c8102e 66%);
+}
+
+.flag-hi {
+    background: linear-gradient(to bottom, #ff9933 33%, #fff 33%, #fff 66%, #138808 66%);
+}
+
+.flag-kn {
+    background: linear-gradient(to bottom, #ff0000 33%, #fff 33%, #fff 66%, #ffc400 66%);
+}
+
+/* Cultural Theme Adaptations */
+.theme-english {
+    --primary-color: #e67e22;
+    --secondary-color: #2c3e50;
+    --accent-color: #3498db;
+    --font-family: 'Poppins', sans-serif;
+}
+
+.theme-hindi {
+    --primary-color: #ff6b35;
+    --secondary-color: #2d3436;
+    --accent-color: #00b894;
+    --font-family: 'Noto Sans Devanagari', sans-serif;
+}
+
+.theme-kannada {
+    --primary-color: #d63031;
+    --secondary-color: #2d3436;
+    --accent-color: #fdcb6e;
+    --font-family: 'Noto Sans Kannada', sans-serif;
+}
+
+/* Language-specific Typography */
+.lang-en {
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.lang-hi {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    letter-spacing: 0.3px;
+    line-height: 1.7;
+}
+
+.lang-kn {
+    font-family: 'Noto Sans Kannada', sans-serif;
+    letter-spacing: 0.2px;
+    line-height: 1.8;
+}
+
+/* Cultural Menu Adaptations */
+.menu-cultural-header {
+    text-align: center;
+    padding: 40px 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    margin-bottom: 40px;
+    border-radius: 15px;
+}
+
+.cultural-greeting {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.cultural-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+/* Hindi/Kannada specific styling */
+.hindi-text {
+    font-size: 1.1em;
+    line-height: 1.7;
+}
+
+.kannada-text {
+    font-size: 1.05em;
+    line-height: 1.8;
+}
+
+/* Cultural Color Schemes */
+.cultural-card {
+    border-left: 4px solid var(--primary-color);
+    background: linear-gradient(135deg, 
+        rgba(var(--primary-color-rgb), 0.05), 
+        rgba(var(--accent-color-rgb), 0.05));
+}
+
+/* Translation Loading */
+.translation-loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px 30px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 2000;
+    font-weight: 600;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.translation-loading.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.translation-loading::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Language-specific Animations */
+.fade-in-rtl {
+    animation: fadeInRTL 0.5s ease-out;
+}
+
+.fade-in-ltr {
+    animation: fadeInLTR 0.5s ease-out;
+}
+
+@keyframes fadeInRTL {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInLTR {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Language Selector */
+@media (max-width: 768px) {
+    .language-selector {
+        position: fixed;
+        top: auto;
+        bottom: 20px;
+        right: 20px;
+        left: 20px;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+    
+    .language-dropdown {
+        position: fixed;
+        bottom: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        right: auto;
+    }
+    
+    .language-dropdown.show {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* Font Loading Optimization */
+@font-face {
+    font-family: 'Noto Sans Devanagari';
+    src: url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&display=swap');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans Kannada';
+    src: url('https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@300;400;500;600;700&display=swap');
+    font-display: swap;
+}
+
+/* Cultural Pattern Backgrounds */
+.pattern-hindi {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ff6b35' fill-opacity='0.05'%3E%3Cpath d='M30 0c16.569 0 30 13.431 30 30s-13.431 30-30 30S0 46.569 0 30 13.431 0 30 0zm0 6c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24S43.255 6 30 6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.pattern-kannada {
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d63031' fill-opacity='0.05'%3E%3Cpath d='M20 20c0-11.046-8.954-20-20-20v40c11.046 0 20-8.954 20-20z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Text Direction Support */
+.rtl {
+    direction: rtl;
+    text-align: right;
+}
+
+.ltr {
+    direction: ltr;
+    text-align: left;
+}
