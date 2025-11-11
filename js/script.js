@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     initNavbar();
     initCarousel();
+    initHeroSlider(); // Add hero slider initialization
     initLightbox();
     initMenuFilters();
     initContactForm();
@@ -215,20 +216,45 @@ function initHeroSlider() {
     const prevButton = document.getElementById('heroPrev');
     const nextButton = document.getElementById('heroNext');
     
+    // Debug: Check if elements are found
+    console.log('Hero Slider Debug:', {
+        slides: slides.length,
+        navButtons: navButtons.length,
+        prevButton: !!prevButton,
+        nextButton: !!nextButton
+    });
+    
     let currentSlide = 0;
     let autoSlideInterval;
     
+    // Return early if no slides found
+    if (slides.length === 0) {
+        console.warn('No hero slides found');
+        return;
+    }
+    
     // Update active slide and navigation
     function updateSlide(index) {
+        // Ensure index is within bounds
+        if (index < 0 || index >= slides.length) {
+            console.warn('Invalid slide index:', index);
+            return;
+        }
+        
         // Remove active class from all slides and nav buttons
         slides.forEach(slide => slide.classList.remove('active'));
         navButtons.forEach(btn => btn.classList.remove('active'));
         
         // Add active class to current slide and nav button
-        slides[index].classList.add('active');
-        navButtons[index].classList.add('active');
+        if (slides[index]) {
+            slides[index].classList.add('active');
+        }
+        if (navButtons[index]) {
+            navButtons[index].classList.add('active');
+        }
         
         currentSlide = index;
+        console.log('Slide updated to:', index);
     }
     
     // Navigate to specific slide
@@ -239,19 +265,23 @@ function initHeroSlider() {
     
     // Next slide
     function nextSlide() {
+        console.log('Next slide clicked, current:', currentSlide);
         const next = (currentSlide + 1) % slides.length;
         updateSlide(next);
     }
     
     // Previous slide
     function prevSlide() {
+        console.log('Previous slide clicked, current:', currentSlide);
         const prev = (currentSlide - 1 + slides.length) % slides.length;
         updateSlide(prev);
     }
     
     // Auto-slide functionality
     function startAutoSlide() {
-        autoSlideInterval = setInterval(nextSlide, 6000);
+        if (slides.length > 1) {
+            autoSlideInterval = setInterval(nextSlide, 6000);
+        }
     }
     
     function resetAutoSlide() {
@@ -259,23 +289,36 @@ function initHeroSlider() {
         startAutoSlide();
     }
     
-    // Event listeners
+    // Event listeners for navigation buttons
     navButtons.forEach((btn, index) => {
-        btn.addEventListener('click', () => goToSlide(index));
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log('Nav button clicked:', index);
+            goToSlide(index);
+        });
     });
     
+    // Event listeners for arrow buttons
     if (prevButton) {
-        prevButton.addEventListener('click', () => {
+        prevButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log('Previous arrow clicked');
             prevSlide();
             resetAutoSlide();
         });
+    } else {
+        console.warn('Previous button not found');
     }
     
     if (nextButton) {
-        nextButton.addEventListener('click', () => {
+        nextButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log('Next arrow clicked');
             nextSlide();
             resetAutoSlide();
         });
+    } else {
+        console.warn('Next button not found');
     }
     
     // Pause auto-slide on hover
@@ -332,8 +375,13 @@ function initHeroSlider() {
         }
     }
     
-    // Initialize
+    // Initialize the first slide
+    updateSlide(0);
+    
+    // Start auto-slide
     startAutoSlide();
+    
+    console.log('Hero slider initialized successfully');
 }
 
 // Contact form functionality

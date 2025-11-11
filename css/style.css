@@ -290,16 +290,23 @@ body {
     font-size: 1.2rem;
     cursor: pointer;
     transition: var(--transition);
-    z-index: 4;
+    z-index: 10;
     display: flex;
     align-items: center;
     justify-content: center;
+    outline: none;
+    user-select: none;
 }
 
 .hero-arrow:hover {
     background: rgba(212, 175, 55, 0.8);
     border-color: var(--primary-color);
     transform: translateY(-50%) scale(1.1);
+    color: var(--text-dark);
+}
+
+.hero-arrow:active {
+    transform: translateY(-50%) scale(0.95);
 }
 
 .hero-arrow-prev {
