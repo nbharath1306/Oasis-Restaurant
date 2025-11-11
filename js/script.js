@@ -1,16 +1,12 @@
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    initNavbar();
-    initCarousel();
-    initHeroSlider(); // Add hero slider initialization
+    initNavigation();
+    initHeroSlider(); // Hero slider initialization
     initLightbox();
-    initMenuFilters();
     initContactForm();
     initScrollAnimations();
     initLazyLoading();
-    
-    // Initialize mobile navigation
-    initMobileNav();
+    initSmoothScrolling();
     
     // Register Service Worker for PWA
     initServiceWorker();
@@ -141,7 +137,11 @@ function refreshApp() {
     }
 }
 
-// Navigation functionality
+// Navigation functionality (alias for initNavbar)
+function initNavbar() {
+    initNavigation();
+}
+
 function initNavigation() {
     const navbar = document.getElementById('navbar');
     const navToggle = document.getElementById('nav-toggle');
@@ -211,27 +211,29 @@ function updateActiveNavLink() {
 
 // Hero slider functionality
 function initHeroSlider() {
-    const slides = document.querySelectorAll('.hero-slide');
-    const navButtons = document.querySelectorAll('.hero-nav-btn');
-    const prevButton = document.getElementById('heroPrev');
-    const nextButton = document.getElementById('heroNext');
-    
-    // Debug: Check if elements are found
-    console.log('Hero Slider Debug:', {
-        slides: slides.length,
-        navButtons: navButtons.length,
-        prevButton: !!prevButton,
-        nextButton: !!nextButton
-    });
-    
-    let currentSlide = 0;
-    let autoSlideInterval;
-    
-    // Return early if no slides found
-    if (slides.length === 0) {
-        console.warn('No hero slides found');
-        return;
-    }
+    // Wait for DOM to be fully loaded
+    setTimeout(() => {
+        const slides = document.querySelectorAll('.hero-slide');
+        const navButtons = document.querySelectorAll('.hero-nav-btn');
+        const prevButton = document.getElementById('heroPrev');
+        const nextButton = document.getElementById('heroNext');
+        
+        // Debug: Check if elements are found
+        console.log('Hero Slider Debug:', {
+            slides: slides.length,
+            navButtons: navButtons.length,
+            prevButton: !!prevButton,
+            nextButton: !!nextButton
+        });
+        
+        let currentSlide = 0;
+        let autoSlideInterval;
+        
+        // Return early if no slides found
+        if (slides.length === 0) {
+            console.warn('No hero slides found');
+            return;
+        }
     
     // Update active slide and navigation
     function updateSlide(index) {
@@ -374,14 +376,15 @@ function initHeroSlider() {
             resetAutoSlide();
         }
     }
-    
-    // Initialize the first slide
-    updateSlide(0);
-    
-    // Start auto-slide
-    startAutoSlide();
-    
-    console.log('Hero slider initialized successfully');
+        
+        // Initialize the first slide
+        updateSlide(0);
+        
+        // Start auto-slide
+        startAutoSlide();
+        
+        console.log('Hero slider initialized successfully');
+    }, 100); // Small delay to ensure DOM is ready
 }
 
 // Contact form functionality
@@ -777,6 +780,27 @@ document.addEventListener('click', (e) => {
         closeLightbox();
     }
 });
+
+// Missing function implementations
+function initCarousel() {
+    // Alias for hero slider
+    initHeroSlider();
+}
+
+function initLightbox() {
+    // Lightbox functionality is already implemented in openLightbox/closeLightbox functions
+    console.log('Lightbox initialized');
+}
+
+function initMenuFilters() {
+    // Menu filters are handled by the advanced menu system
+    console.log('Menu filters ready');
+}
+
+function initMobileNav() {
+    // Mobile navigation is handled in initNavigation
+    console.log('Mobile navigation ready');
+}
 
 // Export utilities for external use
 window.OasisRestaurant = {
